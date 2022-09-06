@@ -19,6 +19,8 @@ interface RoutingViewModel<
 
     override fun onEventDebounced(event: TypeOfViewEvent)
 
+    override fun TypeOfViewEvent.push()
+
     fun pushState(state: TypeOfViewState)
 
     fun TypeOfViewState.push()

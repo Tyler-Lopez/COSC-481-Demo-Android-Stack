@@ -16,8 +16,10 @@ class HomeViewModel @Inject constructor(
         HomeScreenViewEvent,
         MainDestination>() {
 
+    private var name: String = String()
+
     init {
-        pushState(Standby())
+        pushState(Standby(name))
     }
 
     override fun onRouterAttached() {} // No-op
@@ -25,20 +27,24 @@ class HomeViewModel @Inject constructor(
     override fun onEvent(event: HomeScreenViewEvent) {
         viewModelScope.launch {
             when (event) {
+                is AddNameClicked -> {}
+                is SeeNamesClicked -> {}
                 is TextFieldValueChanged -> {
                     onTextFieldValueChanged(event)
                 }
-                else -> {}
             }
         }
     }
 
+    private fun onAddNameClicked() {
+    }
+
+    private fun onSeeUsersClicked() {
+    }
+
     private fun onTextFieldValueChanged(event: TextFieldValueChanged) {
         // TODO, put logic here preventing bad names
-        pushState(
-            Standby(
-                name = event.value
-            )
-        )
+        name = event.value
+        pushState(Standby(name = name))
     }
 }

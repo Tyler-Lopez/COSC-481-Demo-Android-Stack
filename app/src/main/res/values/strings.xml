@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DemoApp</string>
+
+    <!-- Text on button that directs you to add your name to database -->
+    <string name="button_add_name_text">Add Name</string>
+
+    <!-- Text on button that directs you to all names in database -->
+    <string name="button_all_names_text">All Names</string>
 </resources>

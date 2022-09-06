@@ -5,7 +5,7 @@ import com.example.demoapp.architecture.ViewState
 
 sealed class HomeScreenViewEvent : ViewEvent {
     object AddNameClicked : HomeScreenViewEvent()
-    object SeeUsersClicked : HomeScreenViewEvent()
+    object SeeNamesClicked : HomeScreenViewEvent()
     data class TextFieldValueChanged(
         val value: String
     ) : HomeScreenViewEvent()
