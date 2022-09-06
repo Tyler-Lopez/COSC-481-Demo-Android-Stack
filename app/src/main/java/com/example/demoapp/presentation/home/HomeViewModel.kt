@@ -36,8 +36,10 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun onAddNameClicked() {
-        // TODO, put logic validating invalid name here
-        routeTo(NavigateHelloName(name))
+        // TODO, put more logic validating invalid name here with err message
+        if (name.isNotEmpty()) {
+            routeTo(NavigateHelloName(name))
+        }
     }
 
     private fun onSeeUsersClicked() {

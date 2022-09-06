@@ -17,6 +17,7 @@ class HelloNameViewModel @Inject constructor(
         MainDestination>() {
 
     init {
+        // Todo, insert into Firestore
         pushState(
             HelloNameViewState.Standby(
                 name = savedStateHandle["name"] ?: error("Name not found.")
