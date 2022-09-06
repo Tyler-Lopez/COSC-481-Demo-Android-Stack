@@ -3,6 +3,8 @@ package com.example.demoapp.presentation.home
 import androidx.lifecycle.viewModelScope
 import com.example.demoapp.architecture.BaseRoutingViewModel
 import com.example.demoapp.presentation.MainDestination
+import com.example.demoapp.presentation.home.HomeScreenViewEvent.*
+import com.example.demoapp.presentation.home.HomeScreenViewState.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,7 +17,7 @@ class HomeViewModel @Inject constructor(
         MainDestination>() {
 
     init {
-        pushState(HomeScreenViewState.Standby())
+        pushState(Standby())
     }
 
     override fun onRouterAttached() {} // No-op
@@ -23,7 +25,7 @@ class HomeViewModel @Inject constructor(
     override fun onEvent(event: HomeScreenViewEvent) {
         viewModelScope.launch {
             when (event) {
-                is HomeScreenViewEvent.TextFieldValueChanged -> {
+                is TextFieldValueChanged -> {
                     onTextFieldValueChanged(event)
                 }
                 else -> {}
@@ -31,10 +33,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun onTextFieldValueChanged(event: HomeScreenViewEvent.TextFieldValueChanged) {
+    private fun onTextFieldValueChanged(event: TextFieldValueChanged) {
         // TODO, put logic here preventing bad names
         pushState(
-            HomeScreenViewState.Standby(
+            Standby(
                 name = event.value
             )
         )
