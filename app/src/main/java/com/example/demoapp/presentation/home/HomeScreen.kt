@@ -14,7 +14,7 @@ fun HomeScreen(
         when (this) {
             is Standby -> HomeScreenStandby(
                 text = name,
-            //    eventReceiver = viewModel
+                viewEventListener = viewModel
             )
         }
     }

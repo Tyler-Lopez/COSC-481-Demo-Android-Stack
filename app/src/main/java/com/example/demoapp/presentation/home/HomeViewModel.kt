@@ -32,6 +32,11 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun onTextFieldValueChanged(event: HomeScreenViewEvent.TextFieldValueChanged) {
-
+        // TODO, put logic here preventing bad names
+        pushState(
+            HomeScreenViewState.Standby(
+                name = event.value
+            )
+        )
     }
 }
