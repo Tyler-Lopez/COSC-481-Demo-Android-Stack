@@ -27,11 +27,10 @@ class HomeViewModel @Inject constructor(
     override fun onEvent(event: HomeScreenViewEvent) {
         viewModelScope.launch {
             when (event) {
-                is AddNameClicked -> {}
-                is SeeNamesClicked -> {}
-                is TextFieldValueChanged -> {
-                    onTextFieldValueChanged(event)
-                }
+                is AddNameClicked -> onAddNameClicked()
+                is SeeNamesClicked -> onSeeUsersClicked()
+                is TextFieldValueChanged -> onTextFieldValueChanged(event)
+
             }
         }
     }
