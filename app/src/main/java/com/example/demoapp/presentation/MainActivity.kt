@@ -12,8 +12,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.demoapp.architecture.Router
+import com.example.demoapp.presentation.home.HomeScreen
 import com.example.demoapp.presentation.theme.DemoAppTheme
+import com.example.demoapp.utils.Screen
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalMaterialApi
@@ -25,11 +30,15 @@ class MainActivity : ComponentActivity(), Router<MainDestination> {
         setContent {
             DemoAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                NavHost(
+                    navController = rememberNavController(),
+                    startDestination = Screen.Home.route
                 ) {
-                    Greeting("Android")
+                    composable(
+                        route = Screen.Home.route
+                    ) {
+                        HomeScreen()
+                    }
                 }
             }
         }
