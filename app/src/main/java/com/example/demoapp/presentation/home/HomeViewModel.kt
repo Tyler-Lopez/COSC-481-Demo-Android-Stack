@@ -30,7 +30,6 @@ class HomeViewModel @Inject constructor(
                 is AddNameClicked -> onAddNameClicked()
                 is SeeNamesClicked -> onSeeUsersClicked()
                 is TextFieldValueChanged -> onTextFieldValueChanged(event)
-
             }
         }
     }
