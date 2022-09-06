@@ -3,6 +3,7 @@ package com.example.demoapp.presentation.home
 import androidx.lifecycle.viewModelScope
 import com.example.demoapp.architecture.BaseRoutingViewModel
 import com.example.demoapp.presentation.MainDestination
+import com.example.demoapp.presentation.MainDestination.*
 import com.example.demoapp.presentation.home.HomeScreenViewEvent.*
 import com.example.demoapp.presentation.home.HomeScreenViewState.*
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -35,9 +36,12 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun onAddNameClicked() {
+        // TODO, put logic validating invalid name here
+        routeTo(NavigateHelloName(name))
     }
 
     private fun onSeeUsersClicked() {
+        routeTo(NavigateAllNames)
     }
 
     private fun onTextFieldValueChanged(event: TextFieldValueChanged) {
