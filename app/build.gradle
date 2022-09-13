@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -48,6 +49,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-bom:30.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1'
     // Retrofit
     // https://github.com/square/retrofitokhttp3
     // https://github.com/square/okhttp
@@ -65,6 +68,7 @@ dependencies {
 
     // ROOM
     implementation 'androidx.room:room-runtime:2.4.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.3.0'
     kapt 'androidx.room:room-compiler:2.4.1'
     implementation 'androidx.room:room-ktx:2.4.1'
 

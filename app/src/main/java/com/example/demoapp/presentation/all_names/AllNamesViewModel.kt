@@ -1,23 +1,37 @@
 package com.example.demoapp.presentation.all_names
 
+import androidx.lifecycle.viewModelScope
 import com.example.demoapp.architecture.BaseRoutingViewModel
+import com.example.demoapp.domain.usecase.GetUsersUseCase
 import com.example.demoapp.presentation.MainDestination
 import com.example.demoapp.presentation.hello_name.HelloNameViewEvent
 import com.example.demoapp.presentation.hello_name.HelloNameViewState
+import com.example.demoapp.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AllNamesViewModel : BaseRoutingViewModel<
+@HiltViewModel
+class AllNamesViewModel @Inject constructor(
+    private val getUsersUseCase: GetUsersUseCase
+) : BaseRoutingViewModel<
         AllNamesViewState,
         AllNamesViewEvent,
         MainDestination>() {
 
     init {
-        // Todo, load from Firestore
-        pushState(
-            AllNamesViewState.Standby(
-                listOf("Mocked Name 1", "Mocked Name 2", "Mocked Name 3")
-            )
-        )
+        pushState(AllNamesViewState.Loading)
+        viewModelScope.launch {
+            (getUsersUseCase() as? Resource.Success)?.let {
+                pushState(
+                    AllNamesViewState.Standby(
+                        it.data.map { user -> user.name }
+                    )
+                )
+            }
+        }
     }
+
     override fun onRouterAttached() {} // No-op
 
     override fun onEvent(event: AllNamesViewEvent) {

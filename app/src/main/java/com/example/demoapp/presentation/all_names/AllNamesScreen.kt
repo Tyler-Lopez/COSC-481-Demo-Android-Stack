@@ -1,5 +1,6 @@
 package com.example.demoapp.presentation.all_names
 
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -11,6 +12,7 @@ fun AllNamesScreen(
 ) {
     viewModel.viewState.collectAsState().value?.apply {
         when (this) {
+            is AllNamesViewState.Loading -> CircularProgressIndicator()
             is AllNamesViewState.Standby -> AllNamesStandby(names)
         }
     }

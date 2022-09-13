@@ -8,5 +8,6 @@ sealed class AllNamesViewEvent : ViewEvent {
 }
 
 sealed class AllNamesViewState : ViewState {
+    object Loading : AllNamesViewState()
     data class Standby(val names: List<String>) : AllNamesViewState()
 }
