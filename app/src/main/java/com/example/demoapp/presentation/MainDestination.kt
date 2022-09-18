@@ -1,6 +1,6 @@
 package com.example.demoapp.presentation
 
-import com.example.demoapp.architecture.Destination
+import com.example.demoapp.presentation.architecture.Destination
 
 sealed class MainDestination : Destination {
     data class NavigateHelloName(

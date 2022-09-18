@@ -1,11 +1,9 @@
 package com.example.demoapp.presentation.all_names
 
 import androidx.lifecycle.viewModelScope
-import com.example.demoapp.architecture.BaseRoutingViewModel
+import com.example.demoapp.presentation.architecture.BaseRoutingViewModel
 import com.example.demoapp.domain.usecase.GetUsersUseCase
 import com.example.demoapp.presentation.MainDestination
-import com.example.demoapp.presentation.hello_name.HelloNameViewEvent
-import com.example.demoapp.presentation.hello_name.HelloNameViewState
 import com.example.demoapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

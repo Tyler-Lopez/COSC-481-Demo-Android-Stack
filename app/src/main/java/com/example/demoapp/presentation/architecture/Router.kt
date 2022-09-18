@@ -1,4 +1,4 @@
-package com.example.demoapp.architecture
+package com.example.demoapp.presentation.architecture
 
 interface Destination
 

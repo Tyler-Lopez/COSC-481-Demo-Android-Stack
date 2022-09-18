@@ -1,4 +1,4 @@
-package com.example.demoapp.architecture
+package com.example.demoapp.presentation.architecture
 
 import kotlinx.coroutines.flow.StateFlow
 

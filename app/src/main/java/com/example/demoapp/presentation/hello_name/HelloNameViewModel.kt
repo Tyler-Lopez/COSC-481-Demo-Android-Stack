@@ -2,11 +2,9 @@ package com.example.demoapp.presentation.hello_name
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import com.example.demoapp.architecture.BaseRoutingViewModel
+import com.example.demoapp.presentation.architecture.BaseRoutingViewModel
 import com.example.demoapp.domain.usecase.InsertUsersUseCase
 import com.example.demoapp.presentation.MainDestination
-import com.example.demoapp.presentation.home.HomeScreenViewEvent
-import com.example.demoapp.presentation.home.HomeScreenViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

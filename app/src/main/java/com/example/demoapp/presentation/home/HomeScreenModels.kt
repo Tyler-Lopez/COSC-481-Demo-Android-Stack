@@ -1,7 +1,7 @@
 package com.example.demoapp.presentation.home
 
-import com.example.demoapp.architecture.ViewEvent
-import com.example.demoapp.architecture.ViewState
+import com.example.demoapp.presentation.architecture.ViewEvent
+import com.example.demoapp.presentation.architecture.ViewState
 
 sealed class HomeScreenViewEvent : ViewEvent {
     object AddNameClicked : HomeScreenViewEvent()

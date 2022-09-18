@@ -1,7 +1,7 @@
 package com.example.demoapp.presentation.home
 
 import androidx.lifecycle.viewModelScope
-import com.example.demoapp.architecture.BaseRoutingViewModel
+import com.example.demoapp.presentation.architecture.BaseRoutingViewModel
 import com.example.demoapp.presentation.MainDestination
 import com.example.demoapp.presentation.MainDestination.*
 import com.example.demoapp.presentation.home.HomeScreenViewEvent.*

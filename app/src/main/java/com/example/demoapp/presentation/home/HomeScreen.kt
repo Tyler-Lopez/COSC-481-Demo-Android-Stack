@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.demoapp.architecture.Router
+import com.example.demoapp.presentation.architecture.Router
 import com.example.demoapp.presentation.MainDestination
 import com.example.demoapp.presentation.home.HomeScreenViewState.Standby
 import com.example.demoapp.presentation.home.composables.HomeScreenStandby

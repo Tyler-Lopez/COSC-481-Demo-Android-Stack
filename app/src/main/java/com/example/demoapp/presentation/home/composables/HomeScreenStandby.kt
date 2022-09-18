@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.example.demoapp.R
-import com.example.demoapp.architecture.ViewEventListener
+import com.example.demoapp.presentation.architecture.ViewEventListener
 import com.example.demoapp.presentation.home.HomeScreenViewEvent
 import com.example.demoapp.presentation.home.HomeScreenViewEvent.*
 
